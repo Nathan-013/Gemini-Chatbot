@@ -37,7 +37,7 @@ const chat = model.startChat({
 });
 
 
-export function Chat() {
+export function Chat(props) {
   const [messages, setMessages] = useState([])
   const [loading, setLoading] = useState(false)
   let text
@@ -67,6 +67,7 @@ export function Chat() {
       chat.params.history = newHist
 
       setLoading(false)
+      // scrollToBottom()
     } catch (e) {
       console.log(e)
       alert("Desculpe ocorreu algum erro, recarregue a página!")
@@ -77,11 +78,17 @@ export function Chat() {
   const generatedMessages =  messages.map((msg, index) => {
     return (
       <div className="flex flex-col gap-3" key={index}>
-        <Message isUser={true} text={msg.query} />
+        <Message isUser={true} name={props.name} text={msg.query} />
         <Message isUser={false} text={msg.text} />
       </div>
     )
   })
+
+  const scrollToBottom = () => {
+    let { scrollTop, scrollHeight } = chatRef.current;
+    console.log(scrollTop, scrollHeight)
+    scrollTop = scrollHeight
+  }
 
   return (
     <section 
@@ -89,11 +96,15 @@ export function Chat() {
     >
       <Header/>
 
-      <div className="flex flex-col gap-3">
-        { generatedMessages }
-      </div>
+      <div 
+        className="chat max-h-80 overflow-y-auto px-2 flex flex-col gap-3"
+      >
+        <div className="flex flex-col gap-3">
+          { generatedMessages }
+        </div>
 
-      {loading && <Loader/>}
+        {loading && <Loader/>}
+      </div>
 
       <QueryForm run={run}/>
     </section>

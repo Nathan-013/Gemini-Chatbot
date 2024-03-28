@@ -6,7 +6,7 @@ export default function Header() {
       <div>
         <Dumbbell size={36} strokeWidth={2.4} />
       </div>
-      <h2 className="font-normal text-5xl">
+      <h2 className="font-normal text-4xl lg:text-5xl">
         Chat<span className="font-bold text-purple-900">Fit</span>
       </h2>
     </div>

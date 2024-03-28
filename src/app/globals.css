@@ -109,3 +109,17 @@ body {
   opacity: 0.8;
  }
 }
+
+/*chat scrollbar*/
+.chat::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat::-webkit-scrollbar-track {
+  background: rgba(1,1,1,0.4);
+}
+
+.chat::-webkit-scrollbar-thumb {
+  background: #3b0764;
+  border-radius: 15px;
+}
