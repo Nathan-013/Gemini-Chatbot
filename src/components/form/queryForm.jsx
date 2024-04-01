@@ -33,7 +33,7 @@ export default function QueryForm(props) {
             `}
           disabled={input === ''}
         >
-          <ArrowUp strokeWidth={2} className="size-4"/>
+          <ArrowUp strokeWidth={2} className="size-4" />
         </button>
       </div>
     </form>

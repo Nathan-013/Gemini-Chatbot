@@ -13,6 +13,7 @@ export default function Input(props) {
         className="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-white bg-opacity-10 border-none leading-tight" 
         type="text"
         onChange={handleChange}
+        required
       />
     </div>
   )

@@ -13,13 +13,13 @@ export default function DataInput(props) {
         bg-black bg-opacity-85
       `}>
         
-        <p className="text-white text-lg font-bold">
-          Digite seus dados
+        <p className="text-white text-xl font-bold">
+          Bem vindo ao Chat<span className='text-semibold text-purple-700'>Fit</span> !
         </p>
 
         <form className="flex flex-col justify-center" onSubmit={handleSubmit}>
           <Input handleChange={props.handleName} label='Nome'/>
-          <Input handleChange={props.handleAge} label='Idade'/>
+          {/* <Input handleChange={props.handleAge} label='Idade'/> */}
 
           <button type="submit" className={`
             p-3 bg-purple-950 text-white font-semibold text-base
